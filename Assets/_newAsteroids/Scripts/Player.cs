@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] float thrust;
     [SerializeField] float torque;
     [SerializeField] float fireRate;
+    [Header("Firing")]
+    [SerializeField] GameObject prefabBullet;
+    [SerializeField] Vector2 shootOffset;
+    [SerializeField] float ShootForce;
 
     ShipObject[] shipObjects;
 
@@ -32,23 +36,6 @@ public class Player : MonoBehaviour
     float it;
     Coroutine invRoutine;
 
-    IEnumerator invEnum()
-    {
-        ForcefieldVisual(true);
-        dam.Invinsible = true;
-        while (it >= 0)
-        {
-            it -= 0.1f;
-            yield return new WaitForSeconds(0.25f);
-
-            if (it <= 1)
-            {
-                ForcefieldVisual(!ForcefieldVisual());
-            }
-        }
-        ForcefieldVisual(false);
-        dam.Invinsible = false;
-    }
     Vector2 screenSize;
 
     Coroutine thrustRoutine;
@@ -82,6 +69,7 @@ public class Player : MonoBehaviour
     }
     private void LateUpdate()
     {
+        screenSize = Camera.main.ScreenToWorldPoint(new(Screen.width, Screen.height));
         for (int i = 1; i < shipObjects.Length; i++)
         {
             Quaternion dir = Quaternion.Euler(0, 0, 90 * (i - 1));
@@ -142,6 +130,23 @@ public class Player : MonoBehaviour
         return shipObjects[0].Forcefield.activeInHierarchy;
     }
 
+    IEnumerator invEnum()
+    {
+        ForcefieldVisual(true);
+        dam.Invinsible = true;
+        while (it >= 0)
+        {
+            it -= 0.1f;
+            yield return new WaitForSeconds(0.25f);
+
+            if (it <= 1)
+            {
+                ForcefieldVisual(!ForcefieldVisual());
+            }
+        }
+        ForcefieldVisual(false);
+        dam.Invinsible = false;
+    }
     #region movement
     void OnTorque(InputValue value)
     {
@@ -181,7 +186,6 @@ public class Player : MonoBehaviour
     void OnFire(InputValue value)
     {
         firing = value.Get<float>() != 0;
-        Debug.Log("Firing: " + firing);
         if (firing && fireRoutine == null) fireRoutine =
                 StartCoroutine(fireEnum());
     }
@@ -189,7 +193,8 @@ public class Player : MonoBehaviour
     {
         while (firing)
         {
-            Debug.Log("pew!");
+            GameObject bul = Instantiate(prefabBullet, (transform.rotation * shootOffset) + transform.position, transform.rotation, null);
+            bul.GetComponent<Rigidbody2D>().AddForce(transform.rotation * Vector2.up * ShootForce);
             yield return new WaitForSeconds(1 / fireRate);
         }
         fireRoutine = null;

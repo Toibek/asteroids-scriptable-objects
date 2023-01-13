@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7463979197738266263}
   - component: {fileID: 7463979197738266262}
   - component: {fileID: 7463979197738266261}
-  - component: {fileID: 7463979197738266260}
   - component: {fileID: 2678786723636042999}
+  - component: {fileID: 7463979197738266260}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -114,7 +114,24 @@ MonoBehaviour:
   forcefieldSprite: {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
   thrust: 1
   torque: 0.5
-  fireRate: 1
+  fireRate: 5
+  prefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
+  shootOffset: {x: 0, y: 0.5}
+  ShootForce: 0.1
+--- !u!114 &2678786723636042999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5535e19ed4f044080eb68624620d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 20
+  Invinsible: 0
 --- !u!50 &7463979197738266260
 Rigidbody2D:
   serializedVersion: 4
@@ -136,17 +153,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2678786723636042999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7463979197738266257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5535e19ed4f044080eb68624620d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 20
-  Invinsible: 0
