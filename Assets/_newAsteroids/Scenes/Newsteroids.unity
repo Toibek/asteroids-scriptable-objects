@@ -312,3 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c31e3f3eaf75e48b49eef865766dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ships:
+  - {fileID: 11400000, guid: 858a78792c7bcee4f8df019f3d6d051e, type: 2}
+  Players: []

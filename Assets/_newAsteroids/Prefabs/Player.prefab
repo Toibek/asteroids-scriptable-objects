@@ -9,10 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7463979197738266256}
+  - component: {fileID: 7463979197738266261}
+  - component: {fileID: -4093123581773624754}
+  - component: {fileID: 2611914250127089676}
+  - component: {fileID: 7712990614093496985}
+  - component: {fileID: 4068426729516826539}
   - component: {fileID: 7463979197738266263}
   - component: {fileID: 7463979197738266262}
-  - component: {fileID: 7463979197738266261}
-  - component: {fileID: 2678786723636042999}
   - component: {fileID: 7463979197738266260}
   m_Layer: 3
   m_Name: Player
@@ -36,6 +39,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7463979197738266261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe341f7a4fec2b4c879615b609e49f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: 38b73ccd06d2e0e4a895a8e22cf0547b, type: 3}
+  - {fileID: 21300000, guid: b82ea5cd41fb38a41a2116b95cf38c60, type: 3}
+  - {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
+  mass: 0.5
+  batteryObject: {fileID: 11400000, guid: 3ee35007e3fcb474a9f4800a1294f92e, type: 2}
+--- !u!114 &-4093123581773624754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6afef68e29fb445a4a90cf8fb038a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 1.5
+  torque: 0.5
+  thrustCost: 5
+--- !u!114 &2611914250127089676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270b6064e764fab4786d98798795d324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 5
+  prefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
+  shootOffset: {x: 0, y: 0}
+  shootForce: 0.1
+  firingCost: 1
+--- !u!114 &7712990614093496985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79d172d6e5fbd14ca64472af0510b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 10
+  Invinsible: 0
+--- !u!114 &4068426729516826539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818dffe4446bd5b428d5498771f873b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7463979197738266263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,41 +176,6 @@ PolygonCollider2D:
       - {x: 0.4, y: -0.25}
       - {x: 0.4, y: -0.15}
       - {x: 0.07, y: 0.48}
---- !u!114 &7463979197738266261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7463979197738266257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe341f7a4fec2b4c879615b609e49f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodySprite: {fileID: 21300000, guid: 38b73ccd06d2e0e4a895a8e22cf0547b, type: 3}
-  thrustSprite: {fileID: 21300000, guid: b82ea5cd41fb38a41a2116b95cf38c60, type: 3}
-  forcefieldSprite: {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
-  thrust: 1
-  torque: 0.5
-  fireRate: 5
-  prefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
-  shootOffset: {x: 0, y: 0.5}
-  ShootForce: 0.1
---- !u!114 &2678786723636042999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7463979197738266257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5535e19ed4f044080eb68624620d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 20
-  Invinsible: 0
 --- !u!50 &7463979197738266260
 Rigidbody2D:
   serializedVersion: 4
@@ -144,9 +188,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 20
+  m_Mass: 2
+  m_LinearDrag: 0.5
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
