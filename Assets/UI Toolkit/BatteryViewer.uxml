@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="BatteryViewer" class="SO_container">
+        <ui:Label text="Capacity" display-tooltip-when-elided="true" />
+        <ui:Slider show-input-field="true" binding-path="MaxCharge" low-value="50" high-value="150" style="flex-direction: row;" />
+        <ui:Label text="Recharge" display-tooltip-when-elided="true" />
+        <ui:Slider picking-mode="Ignore" value="7.8" high-value="10" low-value="5" binding-path="RechargeRate" focusable="true" show-input-field="true" style="height: auto; width: auto;" />
+        <ui:ProgressBar value="0.6" binding-path="Charge" high-value="1" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -23,7 +23,7 @@ public class Weapons : MonoBehaviour
     }
     private IEnumerator fireEnum()
     {
-        while (firing && battery.Drain(weapon.FiringCost))
+        while (firing && battery.Impulse(weapon.FiringCost))
         {
             GameObject bul = Instantiate(weapon.PrefabBullet, transform.position, transform.rotation, null);
             bul.GetComponent<Rigidbody2D>().AddForce(transform.rotation * Vector2.up * weapon.ShootForce);

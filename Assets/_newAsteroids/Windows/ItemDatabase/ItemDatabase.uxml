@@ -1,0 +1,69 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/_newAsteroids/Windows/Tutorialthing/ItemDatabase.uss?fileID=7433441132597879392&amp;guid=c6e570e83d3b02d449f3f670b4433be8&amp;type=3#ItemDatabase" />
+    <ui:VisualElement style="flex-direction: row; flex-grow: 1; height: 100%; flex-shrink: 0;">
+        <ui:VisualElement name="ItemsTab" style="width: 150px; justify-content: flex-start; flex-grow: 0; flex-shrink: 0;">
+            <ui:VisualElement name="itemHeader" class="TitleBar">
+                <ui:Label tabindex="-1" text="Ships" display-tooltip-when-elided="true" style="height: 20px; -unity-font-style: bold; font-size: 15px; margin-left: 5px; margin-right: 2px; flex-grow: 1;" />
+                <ui:Button tabindex="-1" text="+" display-tooltip-when-elided="true" name="NewShip" style="width: 20px; height: 20px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="DetailsTab" style="justify-content: flex-start; align-items: stretch; flex-grow: 1;">
+            <ui:VisualElement name="DetailHeader" class="TitleBar">
+                <ui:Label tabindex="-1" text="Details" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Details">
+                <ui:VisualElement name="ShipDetails" style="flex-shrink: 0; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; flex-direction: row;">
+                    <ui:VisualElement name="Sprite" style="width: 75px; height: 75px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-image: url(&apos;project://database/Assets/_newAsteroids/Art/Sprites/Spaceship.png?fileID=2800000&amp;guid=38b73ccd06d2e0e4a895a8e22cf0547b&amp;type=3#Spaceship&apos;); flex-shrink: 0;" />
+                    <ui:VisualElement name="Core" style="flex-direction: column; flex-grow: 1; flex-shrink: 1;">
+                        <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Ship" name="ShipName" binding-path="Name" />
+                        <ui:Slider picking-mode="Ignore" label="Mass" value="0.5" high-value="1" show-input-field="true" name="Mass" binding-path="Mass" low-value="0.1" />
+                        <ui:SliderInt picking-mode="Ignore" label="Health" value="42" high-value="100" name="Health" binding-path="Health" show-input-field="true" />
+                        <ui:VisualElement name="SpriteFields" style="flex-direction: row;">
+                            <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" name="ShipSprite" binding-path="ShipSprite" tooltip="Hull sprite" class="ObjectField" />
+                            <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" name="ThrustSprite" binding-path="ThrustSprite" tooltip="Thrust sprite" class="ObjectField" />
+                            <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" name="ShieldSprite" binding-path="ShieldSprite" tooltip="Forcefield sprite" class="ObjectField" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Components" style="flex-wrap: nowrap; align-items: stretch;">
+                    <ui:VisualElement name="Engine" class="Container" style="flex-shrink: 0; flex-grow: 0;">
+                        <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
+                            <ui:Label tabindex="-1" text="Engine" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
+                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="EngineDetails">
+                            <ui:TextField picking-mode="Ignore" label="Name" name="EngineName" binding-path="Name" />
+                            <ui:Slider picking-mode="Ignore" label="Thrust" value="1.5" high-value="3" show-input-field="true" name="Thrust" binding-path="Thrust" low-value="0.1" />
+                            <ui:Slider picking-mode="Ignore" label="Torque" value="0.5" high-value="1" show-input-field="true" name="Torque" binding-path="Torque" low-value="0.1" />
+                            <ui:Slider picking-mode="Ignore" label="Charge" value="0" high-value="10" show-input-field="true" name="EngineCost" binding-path="ThrustCost" low-value="5" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Weapon" class="Container" style="flex-shrink: 0; flex-grow: 0;">
+                        <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
+                            <ui:Label tabindex="-1" text="Weapon" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
+                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="WeaponDetails">
+                            <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" />
+                            <ui:Slider picking-mode="Ignore" label="Rate" value="5" high-value="25" show-input-field="true" binding-path="FireRate" low-value="1" />
+                            <ui:Slider picking-mode="Ignore" label="Force" value="0.1" high-value="1" show-input-field="true" binding-path="ShootForce" low-value="0.1" />
+                            <ui:Slider picking-mode="Ignore" label="Charge" value="5" high-value="25" show-input-field="true" binding-path="FiringCost" low-value="1" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="Battery" class="Container" style="flex-shrink: 0; flex-grow: 0;">
+                        <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
+                            <ui:Label tabindex="-1" text="Battery" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
+                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                        </ui:VisualElement>
+                        <ui:VisualElement name="BatteryDetails">
+                            <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" />
+                            <ui:Slider picking-mode="Ignore" label="Capacity" value="100" high-value="1000" show-input-field="true" binding-path="MaxCharge" low-value="50" />
+                            <ui:Slider picking-mode="Ignore" label="Recharge" value="1" high-value="20" show-input-field="true" binding-path="RechargeRate" low-value="1" />
+                            <ui:ProgressBar title=" " binding-path="Battery" high-value="1" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

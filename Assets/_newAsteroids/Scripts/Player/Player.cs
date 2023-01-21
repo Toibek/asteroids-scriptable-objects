@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    internal ShipSO ShipCore;
+    public ShipSO ShipCore;
 
     internal BatterySO BatteryInstance;
     Coroutine invRoutine;
@@ -34,15 +34,16 @@ public class Player : MonoBehaviour
         rb.mass = 1 + (ShipCore.Mass * 2);
 
 
-        BatteryInstance = Instantiate(ShipCore.Battery);
+        BatteryInstance = ShipCore.Battery;
         BatteryInstance.Reset();
 
-        for (int i = 0; i < ShipCore.Sprites.Length; i++)
+        Sprite[] sprites = { ShipCore.ShipSprite, ShipCore.ThrustSprite, ShipCore.ShieldSprite};
+        for (int i = 0; i < sprites.Length; i++)
         {
             GameObject go = new(i.ToString());
             go.transform.parent = transform;
             SpriteRenderer sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = ShipCore.Sprites[i];
+            sr.sprite = sprites[i];
             sr.sortingOrder = 10 * i;
         }
 

@@ -5,9 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Core", menuName = "Ship/Core")]
 public class ShipSO : ScriptableObject
 {
-    public Sprite[] Sprites;
+    public string ID = System.Guid.NewGuid().ToString().ToUpper();
+    public string Name;
+
+    public Sprite ShipSprite;
+    public Sprite ThrustSprite;
+    public Sprite ShieldSprite;
+
     public float Mass = 0.5f;
     public int Health = 10;
+
     public EngineSO Engine;
     public WeaponSO Weapon;
     public BatterySO Battery;

@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
     private IEnumerator ThrustEnum()
     {
         transform.GetChild(1).gameObject.SetActive(true);
-        while (currentThrust != 0 && battery.Drain(engine.ThrustCost * Time.deltaTime))
+        while (currentThrust != 0 && battery.Continous(engine.ThrustCost * Time.deltaTime))
         {
             rb.AddForce(transform.up * currentThrust * engine.Thrust);
             yield return new WaitForEndOfFrame();

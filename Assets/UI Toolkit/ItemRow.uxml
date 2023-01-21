@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_newAsteroids/Windows/Tutorialthing/ItemDatabase.uss?fileID=7433441132597879392&amp;guid=c6e570e83d3b02d449f3f670b4433be8&amp;type=3#ItemDatabase" />
+    <ui:VisualElement name="ItemRow" class="Container" style="height: auto; align-items: center; justify-content: flex-start; flex-direction: row; flex-wrap: wrap; min-height: auto;">
+        <ui:VisualElement name="Icon" style="width: 25px; height: 25px; background-image: url(&apos;project://database/Assets/_newAsteroids/Art/Sprites/Spaceship.png?fileID=2800000&amp;guid=38b73ccd06d2e0e4a895a8e22cf0547b&amp;type=3#Spaceship&apos;); flex-shrink: 0;" />
+        <ui:Label tabindex="-1" text="New ship" display-tooltip-when-elided="true" name="Name" style="margin-left: 5px; margin-right: 2px; -unity-text-align: middle-left; flex-grow: 1; height: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

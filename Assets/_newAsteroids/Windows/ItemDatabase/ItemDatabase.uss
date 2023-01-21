@@ -1,0 +1,63 @@
+.custom-label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.VerticalDivider {
+    width: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: var(--unity-colors-default-border);
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.ObjectField {
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+.HorizontalDivider {
+    width: auto;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: var(--unity-colors-default-border);
+    height: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.Container {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: var(--unity-colors-default-border);
+    border-right-color: var(--unity-colors-default-border);
+    border-top-color: var(--unity-colors-default-border);
+    border-bottom-color: var(--unity-colors-default-border);
+    flex-grow: 1;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    background-color: var(--unity-colors-window-background);
+    justify-content: flex-start;
+    flex-shrink: 1;
+}
+
+.unity-slider {
+}
+
+.unity-base-slider__input {
+}
+
+.TitleBar {
+    background-color: var(--unity-colors-default-background);
+    flex-direction: row;
+    -unity-font-style: bold;
+    font-size: 15px;
+    height: 25px;
+    align-items: center;
+}

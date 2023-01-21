@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/_newAsteroids/UI/EditorStyleSheet.uss?fileID=7433441132597879392&amp;guid=b39841617627b15439e62da83072ae83&amp;type=3#EditorStyleSheet" />
+    <ui:VisualElement class="SO_container">
+        <ui:VisualElement name="Sprite-container" style="justify-content: space-around; flex-direction: row; flex-wrap: wrap;">
+            <uie:ObjectField label="Ship" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="ShipSprite" class="sprite-field" style="flex-direction: column;" />
+            <uie:ObjectField label="Thrust" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="ThrustSprite" class="sprite-field" />
+            <uie:ObjectField label="Shield" type="UnityEngine.Sprite, UnityEngine.CoreModule" binding-path="ShieldSprite" class="sprite-field" />
+        </ui:VisualElement>
+        <ui:Slider picking-mode="Ignore" label="Mass" value="42" high-value="100" show-input-field="true" binding-path="Mass" />
+        <ui:Slider picking-mode="Ignore" label="Health" value="42" high-value="100" show-input-field="true" binding-path="Health" />
+    </ui:VisualElement>
+    <uie:ObjectField label="Battery" binding-path="Battery" />
+</ui:UXML>
