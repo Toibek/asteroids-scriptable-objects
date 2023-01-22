@@ -61,3 +61,9 @@
     height: 25px;
     align-items: center;
 }
+
+.ComponentList {
+    width: 100px;
+    border-right-width: 1px;
+    border-right-color: var(--unity-colors-default-border);
+}

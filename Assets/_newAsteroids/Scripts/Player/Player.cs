@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     internal BatterySO BatteryInstance;
     Coroutine invRoutine;
+    Coroutine batRoutine;
     float InvTime
     {
         get
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
 
         BatteryInstance = ShipCore.Battery;
-        StartCoroutine(BatteryInstance.RechargeEnum());
+        batRoutine = StartCoroutine(BatteryInstance.RechargeEnum());
         BatteryInstance.Reset();
 
         Sprite[] sprites = { ShipCore.ShipSprite, ShipCore.ThrustSprite, ShipCore.ShieldSprite};
@@ -60,6 +61,11 @@ public class Player : MonoBehaviour
 
         Component<Movement>().Setup(ShipCore.Engine, BatteryInstance);
         Component<Weapons>().Setup(ShipCore.Weapon, BatteryInstance);
+    }
+    private void OnDestroy()
+    {
+        ShipCore.OnMassChanged -= UpdateMass;
+        StopCoroutine(batRoutine);
     }
     void UpdateMass()
     {

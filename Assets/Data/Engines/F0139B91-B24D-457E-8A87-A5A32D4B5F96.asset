@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2c74c352e9176b4e9d1cd2f9c326adb, type: 3}
-  m_Name: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
+  m_Name: F0139B91-B24D-457E-8A87-A5A32D4B5F96
   m_EditorClassIdentifier: 
-  ID: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
-  Name: Basic Engine
-  Thrust: 0.34
-  Torque: 0.137
-  ThrustCost: 10
+  ID: F0139B91-B24D-457E-8A87-A5A32D4B5F96
+  Name: New Engine
+  Thrust: 1.5
+  Torque: 0.5
+  ThrustCost: 5

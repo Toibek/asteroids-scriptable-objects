@@ -26,40 +26,57 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="Components" style="flex-wrap: nowrap; align-items: stretch;">
-                    <ui:VisualElement name="Engine" class="Container" style="flex-shrink: 0; flex-grow: 0;">
+                    <ui:VisualElement name="Engine" class="Container" style="flex-shrink: 0; flex-grow: 0; display: flex;">
                         <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
                             <ui:Label tabindex="-1" text="Engine" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
-                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                            <ui:VisualElement style="flex-direction: row; align-items: center;">
+                                <ui:Button tabindex="-1" text="New" display-tooltip-when-elided="true" name="NewEngine" />
+                                <ui:Button tabindex="-1" text="Delete" display-tooltip-when-elided="true" name="DeleteEngine" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
-                        <ui:VisualElement name="EngineDetails">
-                            <ui:TextField picking-mode="Ignore" label="Name" name="EngineName" binding-path="Name" />
-                            <ui:Slider picking-mode="Ignore" label="Thrust" value="1.5" high-value="3" show-input-field="true" name="Thrust" binding-path="Thrust" low-value="0.1" />
-                            <ui:Slider picking-mode="Ignore" label="Torque" value="0.5" high-value="1" show-input-field="true" name="Torque" binding-path="Torque" low-value="0.1" />
-                            <ui:Slider picking-mode="Ignore" label="Charge" value="0" high-value="10" show-input-field="true" name="EngineCost" binding-path="ThrustCost" low-value="5" />
+                        <ui:VisualElement name="EngineContent" style="flex-direction: row;">
+                            <ui:VisualElement name="EngineList" class="ComponentList" />
+                            <ui:VisualElement name="EngineDetails" style="display: flex; visibility: visible; flex-grow: 1;">
+                                <ui:TextField picking-mode="Ignore" label="Name" name="EngineName" binding-path="Name" />
+                                <ui:Slider picking-mode="Ignore" label="Thrust" value="1.5" high-value="3" show-input-field="true" name="Thrust" binding-path="Thrust" low-value="0.1" />
+                                <ui:Slider picking-mode="Ignore" label="Torque" value="0.5" high-value="1" show-input-field="true" name="Torque" binding-path="Torque" low-value="0.1" />
+                                <ui:Slider picking-mode="Ignore" label="Charge" value="0" high-value="10" show-input-field="true" name="EngineCost" binding-path="ThrustCost" low-value="5" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="Weapon" class="Container" style="flex-shrink: 0; flex-grow: 0;">
                         <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
                             <ui:Label tabindex="-1" text="Weapon" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
-                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                            <ui:VisualElement style="flex-direction: row; align-items: center;">
+                                <ui:Button tabindex="-1" text="New" display-tooltip-when-elided="true" name="NewWeapon" />
+                                <ui:Button tabindex="-1" text="Delete" display-tooltip-when-elided="true" name="DeleteWeapon" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
-                        <ui:VisualElement name="WeaponDetails">
-                            <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" />
-                            <ui:Slider picking-mode="Ignore" label="Rate" value="5" high-value="25" show-input-field="true" binding-path="FireRate" low-value="1" />
-                            <ui:Slider picking-mode="Ignore" label="Force" value="0.1" high-value="1" show-input-field="true" binding-path="ShootForce" low-value="0.1" />
-                            <ui:Slider picking-mode="Ignore" label="Charge" value="5" high-value="25" show-input-field="true" binding-path="FiringCost" low-value="1" />
+                        <ui:VisualElement name="WeaponContent" style="flex-direction: row;">
+                            <ui:VisualElement name="WeaponList" class="ComponentList" />
+                            <ui:VisualElement name="WeaponDetails" style="display: flex; flex-grow: 1;">
+                                <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" name="WeaponName" />
+                                <ui:Slider picking-mode="Ignore" label="Rate" value="5" high-value="25" show-input-field="true" binding-path="FireRate" low-value="1" />
+                                <ui:Slider picking-mode="Ignore" label="Force" value="0.1" high-value="1" show-input-field="true" binding-path="ShootForce" low-value="0.1" />
+                                <ui:Slider picking-mode="Ignore" label="Charge" value="5" high-value="25" show-input-field="true" binding-path="FiringCost" low-value="1" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement name="Battery" class="Container" style="flex-shrink: 0; flex-grow: 0;">
                         <ui:VisualElement name="Header" class="TitleBar" style="height: 20px; justify-content: space-between; flex-direction: row;">
                             <ui:Label tabindex="-1" text="Battery" display-tooltip-when-elided="true" style="font-size: 12px; -unity-font-style: bold;" />
-                            <ui:Button tabindex="-1" text="Remove" display-tooltip-when-elided="true" />
+                            <ui:VisualElement style="flex-direction: row; align-items: center;">
+                                <ui:Button tabindex="-1" text="New" display-tooltip-when-elided="true" name="NewBattery" />
+                                <ui:Button tabindex="-1" text="Delete" display-tooltip-when-elided="true" name="DeleteBattery" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
-                        <ui:VisualElement name="BatteryDetails">
-                            <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" />
-                            <ui:Slider picking-mode="Ignore" label="Capacity" value="100" high-value="1000" show-input-field="true" binding-path="MaxCharge" low-value="50" />
-                            <ui:Slider picking-mode="Ignore" label="Recharge" value="1" high-value="20" show-input-field="true" binding-path="RechargeRate" low-value="1" />
-                            <ui:ProgressBar title=" " binding-path="Battery" high-value="1" />
+                        <ui:VisualElement name="BatteryContent" style="flex-direction: row;">
+                            <ui:VisualElement name="BatteryList" class="ComponentList" />
+                            <ui:VisualElement name="BatteryDetails" style="flex-grow: 1;">
+                                <ui:TextField picking-mode="Ignore" label="Name" binding-path="Name" name="BatteryName" />
+                                <ui:Slider picking-mode="Ignore" label="Capacity" value="100" high-value="1000" show-input-field="true" binding-path="MaxCharge" low-value="50" />
+                                <ui:Slider picking-mode="Ignore" label="Recharge" value="1" high-value="20" show-input-field="true" binding-path="RechargeRate" low-value="1" />
+                            </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>

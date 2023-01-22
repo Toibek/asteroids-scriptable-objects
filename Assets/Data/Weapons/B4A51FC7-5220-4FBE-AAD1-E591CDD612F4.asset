@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2c74c352e9176b4e9d1cd2f9c326adb, type: 3}
-  m_Name: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
+  m_Script: {fileID: 11500000, guid: 2de4152cbd68dc24aa3b9911b809f428, type: 3}
+  m_Name: B4A51FC7-5220-4FBE-AAD1-E591CDD612F4
   m_EditorClassIdentifier: 
-  ID: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
-  Name: Basic Engine
-  Thrust: 0.34
-  Torque: 0.137
-  ThrustCost: 10
+  ID: B4A51FC7-5220-4FBE-AAD1-E591CDD612F4
+  Name: New Weapon
+  PrefabBullet: {fileID: 0}
+  FireRate: 5
+  ShootForce: 0
+  FiringCost: 0

@@ -11,7 +11,6 @@ public class BatterySO : ScriptableObject
     public float MaxCharge = 100f;
     public float RechargeRate = 5f;
 
-    float lastRecharge;
     public float Battery;
     public void Reset()
     {

@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2c74c352e9176b4e9d1cd2f9c326adb, type: 3}
-  m_Name: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
+  m_Script: {fileID: 11500000, guid: f7320d871a4e2a145826c0b79584bdb2, type: 3}
+  m_Name: 7C96491E-CB6F-49FB-B226-6E9E1592B94F
   m_EditorClassIdentifier: 
-  ID: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
-  Name: Basic Engine
-  Thrust: 0.34
-  Torque: 0.137
-  ThrustCost: 10
+  ID: 7C96491E-CB6F-49FB-B226-6E9E1592B94F
+  Name: New Battery
+  MaxCharge: 100
+  RechargeRate: 5
+  Battery: 1

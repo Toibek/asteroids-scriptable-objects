@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: E90630A2-D375-4055-A4E7-24A5D7AED480
   m_EditorClassIdentifier: 
   ID: E90630A2-D375-4055-A4E7-24A5D7AED480
-  Name: Basic
+  Name: Basic Weapon
   PrefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
   FireRate: 5
   ShootForce: 0.1
-  FiringCost: 1
+  FiringCost: 5

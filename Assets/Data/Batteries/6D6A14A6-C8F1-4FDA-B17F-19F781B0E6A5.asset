@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 6D6A14A6-C8F1-4FDA-B17F-19F781B0E6A5
   m_EditorClassIdentifier: 
   ID: 6D6A14A6-C8F1-4FDA-B17F-19F781B0E6A5
-  Name: Basic
-  MaxCharge: 100
-  RechargeRate: 4
-  Battery: 0.46462345
+  Name: Basic Battery
+  MaxCharge: 1000
+  RechargeRate: 20
+  Battery: 1

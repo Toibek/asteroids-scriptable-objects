@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f43a776d9d8a6d4ebbabf7168b02036, type: 3}
-  m_Name: 643126AD-4379-4BDF-8DE7-5C285551A3DD
+  m_Name: 82BEC956-26C0-4D76-8AAF-016CC7379B84
   m_EditorClassIdentifier: 
-  ID: 643126AD-4379-4BDF-8DE7-5C285551A3DD
+  ID: 82BEC956-26C0-4D76-8AAF-016CC7379B84
   Name: New Item
   ShipSprite: {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
   ThrustSprite: {fileID: 0}
   ShieldSprite: {fileID: 0}
-  Mass: 0.684
-  Health: 27
+  Mass: 0.5
+  Health: 10
   Engine: {fileID: 0}
   Weapon: {fileID: 0}
   Battery: {fileID: 0}

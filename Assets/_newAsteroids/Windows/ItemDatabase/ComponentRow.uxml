@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/_newAsteroids/Windows/ItemDatabase/ItemDatabase.uss?fileID=7433441132597879392&amp;guid=c6e570e83d3b02d449f3f670b4433be8&amp;type=3#ItemDatabase" />
+    <ui:VisualElement name="ItemRow" class="Container" style="height: auto; align-items: center; justify-content: flex-start; flex-direction: row; flex-wrap: wrap; min-height: auto;">
+        <ui:Label tabindex="-1" text="New ship" display-tooltip-when-elided="true" name="Name" style="margin-left: 5px; margin-right: 2px; -unity-text-align: middle-left; flex-grow: 1; height: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

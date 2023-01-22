@@ -8,6 +8,7 @@ MonoImporter:
   - visualTree: {fileID: 9197481963319205126, guid: 9aa63cb2b1af49d4b90bd5f26040af4f, type: 3}
   - styleSheet: {fileID: 7433441132597879392, guid: c6e570e83d3b02d449f3f670b4433be8, type: 3}
   - m_ItemRowTemplate: {fileID: 9197481963319205126, guid: 5b82cd0096dfaf44bb8d83242d029c82, type: 3}
+  - m_ComponentRowTemplate: {fileID: 9197481963319205126, guid: 30abfaa0adafd0c43b1a4891450e05c9, type: 3}
   - m_DefaultItemIcon: {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
