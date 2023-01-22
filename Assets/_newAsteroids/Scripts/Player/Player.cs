@@ -31,10 +31,12 @@ public class Player : MonoBehaviour
     {
         ShipCore = shipCore;
         rb = Component<Rigidbody2D>();
-        rb.mass = 1 + (ShipCore.Mass * 2);
+        ShipCore.OnMassChanged += UpdateMass;
+        UpdateMass();
 
 
         BatteryInstance = ShipCore.Battery;
+        StartCoroutine(BatteryInstance.RechargeEnum());
         BatteryInstance.Reset();
 
         Sprite[] sprites = { ShipCore.ShipSprite, ShipCore.ThrustSprite, ShipCore.ShieldSprite};
@@ -58,6 +60,10 @@ public class Player : MonoBehaviour
 
         Component<Movement>().Setup(ShipCore.Engine, BatteryInstance);
         Component<Weapons>().Setup(ShipCore.Weapon, BatteryInstance);
+    }
+    void UpdateMass()
+    {
+        rb.mass = 1 + (ShipCore.Mass * 2);
     }
     T Component<T>()
     {

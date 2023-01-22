@@ -13,6 +13,7 @@ public class SOholder : VisualElement
             new UxmlStringAttributeDescription { name = "string-attr", defaultValue = "default_value" };
         UxmlIntAttributeDescription m_Int =
             new UxmlIntAttributeDescription { name = "int-attr", defaultValue = 2 };
+        
 
         public override IEnumerable<UxmlChildElementDescription> uxmlChildElementsDescription
         {

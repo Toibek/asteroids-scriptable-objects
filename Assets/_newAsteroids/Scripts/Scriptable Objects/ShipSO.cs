@@ -14,8 +14,11 @@ public class ShipSO : ScriptableObject
 
     public float Mass = 0.5f;
     public int Health = 10;
+    public  EmptyDelegate OnMassChanged;
 
     public EngineSO Engine;
     public WeaponSO Weapon;
     public BatterySO Battery;
+
+    public delegate void EmptyDelegate();
 }

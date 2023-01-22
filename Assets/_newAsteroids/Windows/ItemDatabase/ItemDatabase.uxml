@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <Style src="project://database/Assets/_newAsteroids/Windows/Tutorialthing/ItemDatabase.uss?fileID=7433441132597879392&amp;guid=c6e570e83d3b02d449f3f670b4433be8&amp;type=3#ItemDatabase" />
+    <Style src="project://database/Assets/_newAsteroids/Windows/ItemDatabase/ItemDatabase.uss?fileID=7433441132597879392&amp;guid=c6e570e83d3b02d449f3f670b4433be8&amp;type=3#ItemDatabase" />
     <ui:VisualElement style="flex-direction: row; flex-grow: 1; height: 100%; flex-shrink: 0;">
         <ui:VisualElement name="ItemsTab" style="width: 150px; justify-content: flex-start; flex-grow: 0; flex-shrink: 0;">
             <ui:VisualElement name="itemHeader" class="TitleBar">
@@ -17,7 +17,7 @@
                     <ui:VisualElement name="Core" style="flex-direction: column; flex-grow: 1; flex-shrink: 1;">
                         <ui:TextField picking-mode="Ignore" label="Name" value="filler text" text="Ship" name="ShipName" binding-path="Name" />
                         <ui:Slider picking-mode="Ignore" label="Mass" value="0.5" high-value="1" show-input-field="true" name="Mass" binding-path="Mass" low-value="0.1" />
-                        <ui:SliderInt picking-mode="Ignore" label="Health" value="42" high-value="100" name="Health" binding-path="Health" show-input-field="true" />
+                        <ui:SliderInt picking-mode="Ignore" label="Health" value="10" high-value="50" name="Health" binding-path="Health" show-input-field="true" low-value="1" />
                         <ui:VisualElement name="SpriteFields" style="flex-direction: row;">
                             <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" name="ShipSprite" binding-path="ShipSprite" tooltip="Hull sprite" class="ObjectField" />
                             <uie:ObjectField type="UnityEngine.Sprite, UnityEngine.CoreModule" name="ThrustSprite" binding-path="ThrustSprite" tooltip="Thrust sprite" class="ObjectField" />

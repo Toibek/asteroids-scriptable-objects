@@ -119,6 +119,11 @@ public class ItemDatabase : EditorWindow
         }
         m_DetailSection.style.visibility = Visibility.Visible;
 
+        rootVisualElement.Q<Slider>("Mass").RegisterValueChangedCallback(v =>
+        {
+            m_activeShip.OnMassChanged?.Invoke();
+        });
+
         if (m_activeShip.Engine != null)
         {
             SerializedObject se = new SerializedObject(m_activeShip.Engine);
@@ -158,7 +163,6 @@ public class ItemDatabase : EditorWindow
         string[] allPaths = Directory.GetFiles("Assets/Data", "*.asset", SearchOption.AllDirectories);
         foreach (string path in allPaths)
         {
-            Debug.Log(path);
             string cleanPath = path.Replace("\\", "/");
             ScriptableObject baseObj = (ScriptableObject)AssetDatabase.LoadAssetAtPath(cleanPath, typeof(ScriptableObject));
             switch (baseObj.GetType().ToString())
@@ -180,6 +184,5 @@ public class ItemDatabase : EditorWindow
                     break;
             }
         }
-        Debug.Log(ships.Count);
     }
 }

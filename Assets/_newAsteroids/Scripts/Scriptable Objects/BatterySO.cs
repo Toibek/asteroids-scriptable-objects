@@ -17,26 +17,22 @@ public class BatterySO : ScriptableObject
     {
         Battery = 1;
     }
-    public bool Continous(float amount)
-    {
-        amount *= Time.deltaTime;
-        return Drain(amount);
-    }
-    public bool Impulse(float amount)
-    {
-        return Drain(amount);
-    }
+    public bool Continous(float amount) { return Drain(amount * Time.deltaTime); }
+    public bool Impulse(float amount) { return Drain(amount); }
     private bool Drain(float amount)
     {
-        Recharge();
+        //Recharge();
         if (Battery * MaxCharge > amount)
-            Battery -= amount/MaxCharge;
+            Battery -= amount / MaxCharge;
         else return false;
         return true;
     }
-    void Recharge()
+    public IEnumerator RechargeEnum()
     {
-        Battery = Mathf.Clamp(Battery + (RechargeRate*(Time.time-lastRecharge))/MaxCharge, 0, 1);
-        lastRecharge = Time.time;
+        while (true)
+        {
+            Battery = Mathf.Clamp(Battery + (RechargeRate * Time.deltaTime) / MaxCharge, 0, 1);
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
