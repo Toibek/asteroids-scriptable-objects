@@ -17,7 +17,7 @@ MonoBehaviour:
   ShipSprite: {fileID: 21300000, guid: 38b73ccd06d2e0e4a895a8e22cf0547b, type: 3}
   ThrustSprite: {fileID: 21300000, guid: b82ea5cd41fb38a41a2116b95cf38c60, type: 3}
   ShieldSprite: {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
-  Mass: 0.253
+  Mass: 0.146
   Health: 10
   Engine: {fileID: 11400000, guid: 35de088ed5d111742981c7e8ffa03e0c, type: 2}
   Weapon: {fileID: 11400000, guid: bb64c4f40466d7341a0898c9b4c50e11, type: 2}

@@ -15,6 +15,6 @@ MonoBehaviour:
   ID: E90630A2-D375-4055-A4E7-24A5D7AED480
   Name: Basic Weapon
   PrefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
-  FireRate: 5.39
+  FireRate: 2
   ShootForce: 0.1
-  FiringCost: 5
+  FiringCost: 1

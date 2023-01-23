@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour
 {
+    public static Transform Parent;
+    public bool StartOn;
     Transform[] Mirrors;
     Vector2 screenSize;
     private void Start()
     {
         screenSize = Camera.main.ScreenToWorldPoint(new(Screen.width, Screen.height));
+        if (StartOn) Setup();
     }
     public void Setup()
     {
         Mirrors = new Transform[4];
         for (int i = 0; i < Mirrors.Length; i++)
+        {
             Mirrors[i] = new GameObject("Mirror").transform;
+            Mirrors[i].parent = Parent;
+            if (TryGetComponent(out SpriteRenderer sr))
+            {
+                Mirrors[i].gameObject.AddComponent<SpriteRenderer>().sprite = sr.sprite;
+            }
+        }
 
         for (int c = 0; c < transform.childCount; c++)
         {
@@ -29,7 +39,6 @@ public class Mirror : MonoBehaviour
             ec.OnHide += () => Active(int.Parse(go.name), false);
         }
     }
-
     public void Active(int layer, bool set)
     {
         for (int i = 0; i < Mirrors.Length; i++)
@@ -40,19 +49,21 @@ public class Mirror : MonoBehaviour
 
     public void LateUpdate()
     {
-        for (int i = 0; i < Mirrors.Length; i++)
-        {
-            Quaternion dir = Quaternion.Euler(0, 0, 90 * i);
-            Vector2 position = dir * Vector2.up * screenSize * 2;
-            Mirrors[i].SetPositionAndRotation((Vector2)transform.position + position, transform.rotation);
-        }
+        if (Mirrors != null)
+            for (int i = 0; i < Mirrors.Length; i++)
+            {
+                Quaternion dir = Quaternion.Euler(0, 0, 90 * i);
+                Vector2 position = dir * Vector2.up * screenSize * 2;
+                Mirrors[i].SetPositionAndRotation((Vector2)transform.position + position, transform.rotation);
+            }
     }
     private void OnDestroy()
     {
-        for (int g = 0; g < Mirrors.Length; g++)
-        {
-            if (Mirrors[g] != null)
-                Destroy(Mirrors[g].gameObject);
-        }
+        if (Mirrors != null)
+            for (int g = 0; g < Mirrors.Length; g++)
+            {
+                if (Mirrors[g] != null)
+                    Destroy(Mirrors[g].gameObject);
+            }
     }
 }

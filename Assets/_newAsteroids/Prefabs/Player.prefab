@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7463979197738266263}
   - component: {fileID: 7463979197738266262}
   - component: {fileID: 7463979197738266260}
+  - component: {fileID: 5545579237734115734}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -51,12 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe341f7a4fec2b4c879615b609e49f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprites:
-  - {fileID: 21300000, guid: 38b73ccd06d2e0e4a895a8e22cf0547b, type: 3}
-  - {fileID: 21300000, guid: b82ea5cd41fb38a41a2116b95cf38c60, type: 3}
-  - {fileID: 21300000, guid: ae3c221128827774ab1a0b15ba6ee469, type: 3}
-  mass: 0.5
-  batteryObject: {fileID: 11400000, guid: 3ee35007e3fcb474a9f4800a1294f92e, type: 2}
+  ShipCore: {fileID: 0}
 --- !u!114 &-4093123581773624754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,9 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6afef68e29fb445a4a90cf8fb038a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 1.5
-  torque: 0.5
-  thrustCost: 5
 --- !u!114 &2611914250127089676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,11 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270b6064e764fab4786d98798795d324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 5
-  prefabBullet: {fileID: 9119213616922431867, guid: ecfa165b42962a545950f9c851afc6e5, type: 3}
-  shootOffset: {x: 0, y: 0}
-  shootForce: 0.1
-  firingCost: 1
 --- !u!114 &7712990614093496985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +164,7 @@ PolygonCollider2D:
       - {x: 0.4, y: -0.25}
       - {x: 0.4, y: -0.15}
       - {x: 0.07, y: 0.48}
+  m_UseDelaunayMesh: 0
 --- !u!50 &7463979197738266260
 Rigidbody2D:
   serializedVersion: 4
@@ -197,3 +186,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5545579237734115734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463979197738266257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b60071585b234a917af2c15d318ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         {
             it = value;
             if (invRoutine == null)
-                invRoutine = StartCoroutine(invEnum());
+                invRoutine = StartCoroutine(InvEnum());
         }
     }
     float it;
@@ -48,13 +48,12 @@ public class Player : MonoBehaviour
             sr.sortingOrder = 10 * i;
         }
 
-
-        Component<Mirror>().Setup();
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(false);
 
         dam = Component<Damageable>();
         dam.Health = ShipCore.Health;
+        dam.OnDamage += () => InvTime = 2;
         InvTime = 2;
 
         Component<Movement>().Setup(ShipCore.Engine, ShipCore.Battery, batteryCharge);
@@ -81,7 +80,7 @@ public class Player : MonoBehaviour
             return gameObject.GetComponent<T>();
         }
     }
-    IEnumerator invEnum()
+    IEnumerator InvEnum()
     {
         transform.GetChild(2).gameObject.SetActive(true);
         dam.Invinsible = true;
@@ -97,5 +96,6 @@ public class Player : MonoBehaviour
         }
         transform.GetChild(2).gameObject.SetActive(false);
         dam.Invinsible = false;
+        invRoutine = null;
     }
 }

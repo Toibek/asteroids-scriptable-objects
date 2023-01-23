@@ -17,10 +17,13 @@ public class PlayerManager : MonoBehaviour
         Player player = input.GetComponent<Player>();
         Players.Add(player);
         player.Setup(Ships[Random.Range(0, Ships.Count)]);
+        if (Players.Count == 1) SendMessage("OnGameStart");
     }
     void OnPlayerLeft(PlayerInput input)
     {
         Players.Remove(input.GetComponent<Player>());
+        Debug.Log("Player left, remaining: " + Players.Count);
+        if (Players.Count == 0) SendMessage("OnGameStop");
     }
 
     [ContextMenu("Load Ships")]

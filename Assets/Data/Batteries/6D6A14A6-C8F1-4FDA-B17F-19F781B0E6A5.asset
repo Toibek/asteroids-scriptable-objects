@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6D6A14A6-C8F1-4FDA-B17F-19F781B0E6A5
   Name: Basic Battery
-  MaxCharge: 1000
-  RechargeRate: 20
-  Battery: 1
+  MaxCharge: 50
+  RechargeRate: 4
