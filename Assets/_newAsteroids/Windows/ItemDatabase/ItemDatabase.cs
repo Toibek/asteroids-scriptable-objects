@@ -93,6 +93,11 @@ public class ItemDatabase : EditorWindow
         rootVisualElement.Q<Button>("NewWeapon").clicked += AddWeapon;
         rootVisualElement.Q<Button>("NewBattery").clicked += AddBattery;
 
+        rootVisualElement.Q<Button>("DeleteShip").clicked += DeleteShip;
+        rootVisualElement.Q<Button>("DeleteEngine").clicked += DeleteEngine;
+        rootVisualElement.Q<Button>("DeleteWeapon").clicked += DeleteWeapon;
+        rootVisualElement.Q<Button>("DeleteBattery").clicked += DeleteBattery;
+
         m_ShipDetails.Q<TextField>("ShipName").RegisterValueChangedCallback(evt =>
         {
             m_ShipList.Rebuild();
@@ -237,6 +242,8 @@ public class ItemDatabase : EditorWindow
         }
     }
     #endregion
+    
+    #region Add Functions
     private void AddShip()
     {
         ShipSO newItem = CreateInstance<ShipSO>();
@@ -277,6 +284,47 @@ public class ItemDatabase : EditorWindow
         batteries.Add(newItem);
         m_BatteryList.Rebuild();
         m_BatteryList.style.height = engines.Count * m_ComponentHeight;
+    }
+    #endregion
+    private void DeleteShip()
+    {
+        string path = AssetDatabase.GetAssetPath(m_activeShip);
+        AssetDatabase.DeleteAsset(path);
+
+        ships.Remove(m_activeShip);
+        m_ShipList.Rebuild();
+
+        m_ShipDetails.style.display = DisplayStyle.None;
+    }
+    private void DeleteEngine()
+    {
+        string path = AssetDatabase.GetAssetPath(m_activeShip.Engine);
+        AssetDatabase.DeleteAsset(path);
+
+        engines.Remove(m_activeShip.Engine);
+        m_EngineList.Rebuild();
+
+        m_EngineDetails.style.display = DisplayStyle.None;
+    }
+    private void DeleteWeapon()
+    {
+        string path = AssetDatabase.GetAssetPath(m_activeShip.Weapon);
+        AssetDatabase.DeleteAsset(path);
+
+        weapons.Remove(m_activeShip.Weapon);
+        m_WeaponList.Rebuild();
+
+        m_WeaponDetails.style.display = DisplayStyle.None;
+    }
+    private void DeleteBattery()
+    {
+        string path = AssetDatabase.GetAssetPath(m_activeShip.Battery);
+        AssetDatabase.DeleteAsset(path);
+
+        batteries.Remove(m_activeShip.Battery);
+        m_BatteryList.Rebuild();
+
+        m_BatteryDetails.style.display = DisplayStyle.None;
     }
 
     public void LoadAllItems()
