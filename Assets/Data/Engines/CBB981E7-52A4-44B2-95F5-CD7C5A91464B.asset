@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7320d871a4e2a145826c0b79584bdb2, type: 3}
-  m_Name: 6D6A14A6-C8F1-4FDA-B17F-19F781B0E6A5
+  m_Script: {fileID: 11500000, guid: e2c74c352e9176b4e9d1cd2f9c326adb, type: 3}
+  m_Name: CBB981E7-52A4-44B2-95F5-CD7C5A91464B
   m_EditorClassIdentifier: 
-  ID: 6D6A14A6-C8F1-4FDA-B17F-19F781B0E6A5
-  Name: Basic Battery
-  MaxCharge: 1000
-  RechargeRate: 6
+  ID: CBB981E7-52A4-44B2-95F5-CD7C5A91464B
+  Name: Twitchy
+  Thrust: 3
+  Torque: 1
+  ThrustCost: 5

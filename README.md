@@ -43,7 +43,5 @@ As it's still fairly hardcoded i would not get around to this yet, i will be loo
 
 ## Remaining issues
 * the different ships are as of now not implemented to be able to get chosen by the user before game start.
-* There's no asteroids to shoot
 * There was no scriptable object made for the bullets, so you can adjust damage.
 * There's no ui displaying the current battery level of the ship
-* The batterys don't create a new instance per ship spawned, so they'd be using the same current battery value at this time.

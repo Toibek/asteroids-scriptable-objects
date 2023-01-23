@@ -60,6 +60,7 @@
                                 <ui:Slider picking-mode="Ignore" label="Rate" value="5" high-value="25" show-input-field="true" binding-path="FireRate" low-value="1" />
                                 <ui:Slider picking-mode="Ignore" label="Force" value="0.1" high-value="1" show-input-field="true" binding-path="ShootForce" low-value="0.1" />
                                 <ui:Slider picking-mode="Ignore" label="Charge" value="5" high-value="25" show-input-field="true" binding-path="FiringCost" low-value="1" />
+                                <uie:ObjectField label="Object Field" binding-path="PrefabBullet" type="UnityEngine.GameObject, UnityEngine.CoreModule" />
                             </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:VisualElement>

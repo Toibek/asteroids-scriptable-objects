@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 258BC584-5E39-4F25-AFE1-2DC0F67FBF7B
   Name: Basic Engine
-  Thrust: 0.31
-  Torque: 0.264
+  Thrust: 0.79
+  Torque: 0.175
   ThrustCost: 5
