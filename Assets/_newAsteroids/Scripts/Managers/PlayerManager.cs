@@ -11,7 +11,6 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         pim = GetComponent<PlayerInputManager>();
-
     }
     void OnPlayerJoined(PlayerInput input)
     {

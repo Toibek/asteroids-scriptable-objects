@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Core", menuName = "Ship/Core")]
 public class ShipSO : ScriptableObject
 {
     public string ID = System.Guid.NewGuid().ToString().ToUpper();

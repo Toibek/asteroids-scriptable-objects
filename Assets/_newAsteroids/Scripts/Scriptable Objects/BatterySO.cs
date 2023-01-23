@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Battery", menuName = "Ship/Battery")]
 public class BatterySO : ScriptableObject
 {
     public string ID = System.Guid.NewGuid().ToString().ToUpper();

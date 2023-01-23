@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Ship/Weapon")]
 public class WeaponSO : ScriptableObject
 {
     public string ID = System.Guid.NewGuid().ToString().ToUpper();
