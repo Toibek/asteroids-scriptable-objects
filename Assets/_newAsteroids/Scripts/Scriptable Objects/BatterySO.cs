@@ -9,27 +9,28 @@ public class BatterySO : ScriptableObject
     public string Name;
     public float MaxCharge = 100f;
     public float RechargeRate = 5f;
-
-    public float Battery;
-    public void Reset()
+    public bool Impulse(FloatSO charge, float cost)
     {
-        Battery = 1;
+        return Drain(charge, cost);
     }
-    public bool Continous(float amount) { return Drain(amount * Time.deltaTime); }
-    public bool Impulse(float amount) { return Drain(amount); }
-    private bool Drain(float amount)
+    public bool Continous(FloatSO charge, float cost)
     {
-        //Recharge();
-        if (Battery * MaxCharge > amount)
-            Battery -= amount / MaxCharge;
-        else return false;
-        return true;
+        return Drain(charge, cost * Time.deltaTime);
     }
-    public IEnumerator RechargeEnum()
+    bool Drain(FloatSO charge, float cost)
+    {
+        if (charge.Value > (cost / MaxCharge))
+        {
+            charge.Value -= (cost / MaxCharge);
+            return true;
+        }
+        return false;
+    }
+    public IEnumerator RechargeEnum(FloatSO charge)
     {
         while (true)
         {
-            Battery = Mathf.Clamp(Battery + (RechargeRate * Time.deltaTime) / MaxCharge, 0, 1);
+            charge.Value = Mathf.Clamp(charge.Value + (RechargeRate * Time.deltaTime) / MaxCharge, 0, 1);
             yield return new WaitForEndOfFrame();
         }
     }

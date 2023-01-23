@@ -6,10 +6,9 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     public ShipSO ShipCore;
-
-    internal BatterySO BatteryInstance;
     Coroutine invRoutine;
     Coroutine batRoutine;
+    FloatSO batteryCharge;
     float InvTime
     {
         get
@@ -36,11 +35,10 @@ public class Player : MonoBehaviour
         UpdateMass();
 
 
-        BatteryInstance = ShipCore.Battery;
-        batRoutine = StartCoroutine(BatteryInstance.RechargeEnum());
-        BatteryInstance.Reset();
+        batteryCharge = ScriptableObject.CreateInstance<FloatSO>();
+        batRoutine = StartCoroutine(shipCore.Battery.RechargeEnum(batteryCharge));
 
-        Sprite[] sprites = { ShipCore.ShipSprite, ShipCore.ThrustSprite, ShipCore.ShieldSprite};
+        Sprite[] sprites = { ShipCore.ShipSprite, ShipCore.ThrustSprite, ShipCore.ShieldSprite };
         for (int i = 0; i < sprites.Length; i++)
         {
             GameObject go = new(i.ToString());
@@ -59,8 +57,8 @@ public class Player : MonoBehaviour
         dam.Health = ShipCore.Health;
         InvTime = 2;
 
-        Component<Movement>().Setup(ShipCore.Engine, BatteryInstance);
-        Component<Weapons>().Setup(ShipCore.Weapon, BatteryInstance);
+        Component<Movement>().Setup(ShipCore.Engine, ShipCore.Battery, batteryCharge);
+        Component<Weapons>().Setup(ShipCore.Weapon, ShipCore.Battery, batteryCharge);
     }
     private void OnDestroy()
     {

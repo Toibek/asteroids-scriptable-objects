@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
     EngineSO engine;
     BatterySO battery;
+    FloatSO charge;
 
     Coroutine thrustRoutine;
     float currentThrust;
@@ -14,10 +15,12 @@ public class Movement : MonoBehaviour
     Coroutine torqueRoutine;
     float currentTorque;
     Rigidbody2D rb;
-    public void Setup(EngineSO engine, BatterySO battery)
+    public void Setup(EngineSO engine, BatterySO battery, FloatSO charge)
     {
         this.engine = engine;
         this.battery = battery;
+        this.charge = charge;
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -45,7 +48,7 @@ public class Movement : MonoBehaviour
     private IEnumerator ThrustEnum()
     {
         transform.GetChild(1).gameObject.SetActive(true);
-        while (currentThrust != 0 && battery.Continous(engine.ThrustCost))
+        while (currentThrust != 0 && battery.Continous(charge, engine.ThrustCost))
         {
             rb.AddForce(transform.up * currentThrust * engine.Thrust);
             yield return new WaitForEndOfFrame();
